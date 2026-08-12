@@ -1,0 +1,58 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "pictum/pictum",
+    "description": "Framework-independent Pictum asset helpers for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolas Hedger",
+            "email": "nicolas@hedger.ch"
+        }
+    ],
+    "homepage": "https://github.com/usepictum/pictum/tree/main/integrations/php",
+    "support": {
+        "issues": "https://github.com/usepictum/pictum/issues",
+        "source": "https://github.com/usepictum/pictum/tree/main/integrations/php"
+    },
+    "require": {
+        "php-http/discovery": "^1.20",
+        "php": "^8.2",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0"
+    },
+    "require-dev": {
+        "carthage-software/mago": "^1.46",
+        "guzzlehttp/guzzle": "^7.9",
+        "laravel/pint": "^1.27",
+        "phpunit/phpunit": "^11.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pictum\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pictum\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "analyse": "mago analyze",
+        "format": "pint",
+        "format:test": "pint --test",
+        "test": "phpunit --colors=always",
+        "check": [
+            "@format:test",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "stable"
+}
